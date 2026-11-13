@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kitan Ready-to-Wear | Outfits you can wear today</title>
+  <meta name="description" content="Ready-to-wear Nigerian outfits, sewn and ready to ship. Prices in naira.">
+
+  <!-- Fonts: one display serif + one clean sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">Kitan</a>
+
+      <!-- Mobile menu button (toggled by the script at the bottom) -->
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Navigation: links jump to sections on this page -->
+      <nav id="main-nav" class="main-nav" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#why-us">Why Kitan</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Sewn already. Wear it today.</h1>
+          <p>Ready-to-wear Nigerian outfits in Ankara, Adire and lace. No waiting for a tailor. Order now and get it delivered to your door.</p>
+          <a href="#products" class="btn btn-accent">Shop outfits</a>
+        </div>
+        <!-- Decorative adire-style block (pure CSS, no image needed) -->
+        <div class="hero-art" aria-hidden="true">
+          <span>Free delivery in Lagos over ₦50,000</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section id="products" class="section">
+      <div class="container">
+        <h2>Ready to wear this week</h2>
+        <p class="section-intro">Every piece is finished and in stock. Pick your size at checkout.</p>
+
+        <div class="product-grid">
+
+          <!-- Product card 1 -->
+          <article class="card">
+            <div class="card-img tone-1" role="img" aria-label="Ankara wrap dress">
+              <span>👗</span>
+            </div>
+            <div class="card-body">
+              <h3>Ankara Wrap Dress</h3>
+              <p>Knee-length wrap dress with a tie waist and soft cotton lining.</p>
+              <p class="price">₦38,500</p>
+              <a href="#" class="btn">Shop Now</a>
+            </div>
+          </article>
+
+          <!-- Product card 2 -->
+          <article class="card">
+            <div class="card-img tone-2" role="img" aria-label="Men's agbada set">
+              <span>🧥</span>
+            </div>
+            <div class="card-body">
+              <h3>Men's Senator Set</h3>
+              <p>Tailored top and trousers in breathable fabric, for church or the office.</p>
+              <p class="price">₦45,000</p>
+              <a href="#" class="btn">Shop Now</a>
+            </div>
+          </article>
+
+          <!-- Product card 3 -->
+          <article class="card">
+            <div class="card-img tone-3" role="img" aria-label="Adire two-piece">
+              <span>👚</span>
+            </div>
+            <div class="card-body">
+              <h3>Adire Two-Piece</h3>
+              <p>Hand-dyed indigo top with matching wide-leg trousers.</p>
+              <p class="price">₦52,000</p>
+              <a href="#" class="btn">Shop Now</a>
+            </div>
+          </article>
+
+          <!-- Product card 4 -->
+          <article class="card">
+            <div class="card-img tone-4" role="img" aria-label="Lace gown">
+              <span>👘</span>
+            </div>
+            <div class="card-body">
+              <h3>Lace Evening Gown</h3>
+              <p>Floor-length lace gown with a fitted bodice. Ready for owambe season.</p>
+              <p class="price">₦85,000</p>
+              <a href="#" class="btn">Shop Now</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY US ========== -->
+    <section id="why-us" class="section section-alt">
+      <div class="container perks">
+        <div>
+          <h3>Ships in 24 hours</h3>
+          <p>Lagos orders arrive in 1–2 days. Other states in 3–5.</p>
+        </div>
+        <div>
+          <h3>Easy size swaps</h3>
+          <p>Doesn't fit? Exchange it within 7 days.</p>
+        </div>
+        <div>
+          <h3>Pay your way</h3>
+          <p>Card, bank transfer or pay on delivery in Lagos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="logo">Kitan</a>
+        <p>Ready-to-wear outfits, made in Nigeria.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#products">Dresses</a>
+        <a href="#products">Men's sets</a>
+        <a href="#products">Two-pieces</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@kitan.example</p>
+        <p>+234 800 000 0000</p>
+        <p>Victoria Island, Lagos</p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Kitan Ready-to-Wear. All rights reserved.</p>
+  </footer>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    // Close the menu after tapping a link
+    nav.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* ==========================================================
+   Kitan Ready-to-Wear: styles
+   Mobile-first: base styles are for phones, media queries
+   add layout for tablets (700px) and desktops (1000px).
+   ========================================================== */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --indigo: #1f2f6b;   /* adire indigo: main brand colour */
+  --chalk:  #f7f5f0;   /* page background */
+  --ink:    #1b1d29;   /* body text */
+  --saffron:#f0a928;   /* accent for buttons */
+  --mist:   #e6e9f4;   /* light indigo tint for alt sections */
+  --radius: 10px;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--chalk);
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; margin: 0 0 .5rem; }
+h1 { font-size: clamp(2.2rem, 7vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h3 { font-size: 1.3rem; }
+p  { margin: 0 0 1rem; }
+a  { color: inherit; }
+.container { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+
+/* ---------- 3. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: .7rem 1.4rem;
+  border-radius: 999px;
+  background: var(--indigo);
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.btn:hover { background: #151f4a; transform: translateY(-2px); }
+.btn-accent { background: var(--saffron); color: var(--ink); }
+.btn-accent:hover { background: #ffbb3d; }
+
+/* ---------- 4. Header and navigation ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--indigo);
+  color: #fff;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.logo { font-family: var(--font-display); font-size: 1.7rem; text-decoration: none; }
+
+/* Mobile: nav is a dropdown panel, hidden until the button is tapped */
+.main-nav {
+  display: none;
+  position: absolute; top: 64px; left: 0; right: 0;
+  flex-direction: column;
+  background: var(--indigo);
+  padding: .5rem 1rem 1rem;
+}
+.main-nav.open { display: flex; }
+.main-nav a { padding: .75rem 0; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+.main-nav a:hover { color: var(--saffron); }
+
+/* Hamburger icon (three bars) */
+.menu-toggle { background: none; border: 0; padding: .5rem; cursor: pointer; display: grid; gap: 5px; }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: #fff; }
+
+/* ---------- 5. Hero ---------- */
+.hero { background: var(--mist); padding: 3rem 0; }
+.hero-inner { display: grid; gap: 2rem; align-items: center; }
+.hero-text p { max-width: 46ch; font-size: 1.1rem; }
+.hero-text h1 { color: var(--indigo); }
+
+/* Adire-inspired pattern drawn with CSS gradients */
+.hero-art {
+  min-height: 220px;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 50%, var(--saffron) 0 8px, transparent 9px),
+    radial-gradient(circle at 50% 50%, transparent 0 18px, rgba(255,255,255,.35) 19px 21px, transparent 22px),
+    var(--indigo);
+  background-size: 48px 48px;
+  display: flex; align-items: flex-end;
+}
+.hero-art span {
+  margin: 1rem; padding: .5rem 1rem; border-radius: 999px;
+  background: var(--chalk); font-size: .9rem; font-weight: 500;
+}
+
+/* ---------- 6. Sections ---------- */
+.section { padding: 3.5rem 0; }
+.section-alt { background: var(--mist); }
+.section-intro { color: #4a4f66; margin-bottom: 2rem; }
+
+/* ---------- 7. Product cards ---------- */
+.product-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; } /* 1 column on phones */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  border: 1px solid #e3e0d8;
+}
+.card-img { height: 200px; display: grid; place-items: center; font-size: 4.5rem; }
+/* Four colour tones stand in for product photos. Replace with <img> tags. */
+.tone-1 { background: #f6d9c9; }
+.tone-2 { background: #cfd8f2; }
+.tone-3 { background: #b8c4ea; }
+.tone-4 { background: #f3e2a9; }
+.card-body { padding: 1.1rem; display: flex; flex-direction: column; flex: 1; }
+.card-body p { color: #4a4f66; font-size: .95rem; }
+.price { margin-top: auto; font-size: 1.25rem; font-weight: 600; color: var(--indigo) !important; }
+.card-body .btn { align-self: flex-start; }
+
+/* ---------- 8. Perks ---------- */
+.perks { display: grid; gap: 1.5rem; }
+
+/* ---------- 9. Footer ---------- */
+.site-footer { background: var(--ink); color: #d7d9e4; padding: 3rem 0 1.5rem; }
+.footer-grid { display: grid; gap: 2rem; }
+.site-footer .logo { color: #fff; }
+.site-footer h4 { color: #fff; margin: 0 0 .5rem; }
+.site-footer a { display: block; text-decoration: none; padding: .2rem 0; }
+.site-footer a:hover { color: var(--saffron); }
+.site-footer .logo { display: inline-block; }
+.copyright { text-align: center; font-size: .85rem; margin: 2rem 0 0; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.15); }
+
+/* ==========================================================
+   MEDIA QUERIES
+   ========================================================== */
+
+/* Tablets: 700px and up */
+@media (min-width: 700px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .perks { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+  .hero-inner { grid-template-columns: 1.2fr 1fr; }
+  .hero-art { min-height: 320px; }
+}
+
+/* Desktops: 1000px and up */
+@media (min-width: 1000px) {
+  .product-grid { grid-template-columns: repeat(4, 1fr); }
+  .hero { padding: 5rem 0; }
+  .hero-art { min-height: 380px; }
+
+  /* Show the full nav bar, hide the hamburger */
+  .menu-toggle { display: none; }
+  .main-nav {
+    display: flex; position: static;
+    flex-direction: row; gap: 2rem; padding: 0; background: none;
+  }
+  .main-nav a { border: 0; padding: 0; }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
